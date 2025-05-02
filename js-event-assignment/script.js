@@ -72,14 +72,18 @@ const accordionButtons = document.querySelectorAll(".accordion-button");
 accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
         const  content = button.nextElementSibling;
-        const isActive = content.style.display === "block";
+        const isActive = content.style.height && content.style.height !== "0px";
 
         // Close all other accordions
-        document.querySelectorAll(".accordion-content").forEach(content => {
-            content.style.display = "none";
+        document.querySelectorAll(".accordion-content").forEach(panel => {
+            panel.style.height = "0";
+            panel.classList.remove("active");
         });
 
         // Toggle current accordion
-        content.style.display = isActive ? "none" : "block";
+        if (!isActive) {
+            content.style.height = content.scrollHeight + "px";
+            content.classList.add("active");
+        }
     });
 });
