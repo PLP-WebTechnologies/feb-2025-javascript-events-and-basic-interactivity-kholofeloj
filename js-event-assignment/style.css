@@ -162,6 +162,7 @@ header h1 {
 
 .accordion-button {
     background-color: #eee;
+    color: #333;
     padding: 10px;
     width: 100%;
     text-align: left;

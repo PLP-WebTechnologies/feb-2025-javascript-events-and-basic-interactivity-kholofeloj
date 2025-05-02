@@ -63,3 +63,23 @@ tabButtons.forEach(button => {
         document.getElementById(tabId).classList.add('active');
     });
 });
+
+
+
+// Accordion Section
+const accordionButtons = document.querySelectorAll(".accordion-button");
+
+accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const  content = button.nextElementSibling;
+        const isActive = content.style.display === "block";
+
+        // Close all other accordions
+        document.querySelectorAll(".accordion-content").forEach(content => {
+            content.style.display = "none";
+        });
+
+        // Toggle current accordion
+        content.style.display = isActive ? "none" : "block";
+    });
+});
