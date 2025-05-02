@@ -188,3 +188,29 @@ header h1 {
 .accordion-content.active {
     padding: 20px;
 }
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+input.valid {
+    border-color: #4CAF50;
+}
+
+input.invalid {
+    border-color: #f44336;
+}
+
+.error-message {
+    color: #f44336;
+    font-size: 0.9rem;
+    display: none;
+}
